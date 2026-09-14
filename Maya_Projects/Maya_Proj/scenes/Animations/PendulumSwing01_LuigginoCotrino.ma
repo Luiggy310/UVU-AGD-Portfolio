@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: PendulumSwing01_LuigginoCotrino.ma
-//Last modified: Mon, Sep 14, 2026 12:17:56 PM
+//Last modified: Mon, Sep 14, 2026 12:30:28 PM
 //Codeset: 1252
 file -rdi 1 -ns "basicsPendulum_rig_v0_1_beta" -rfn "basicsPendulum_rig_v0_1_betaRN"
 		 -op "VERS|2012|UVER|undef|MADE|undef|CHNG|Sat, Oct 01, 2016 12:21:25 AM|ICON|undef|INFO|undef|OBJN|970|INCL|undef(|LUNI|cm|TUNI|pal|AUNI|deg|TDUR|141120000|"
@@ -18,18 +18,18 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202604221258-70da84b25e";
 fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26200)";
-fileInfo "UUID" "D5D2EF45-47CC-1A28-E48C-49A68C1C362C";
+fileInfo "UUID" "4057FB66-40AF-DA9B-4B2E-0BB16BDAA979";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "989AB6D7-405E-FCAF-6C17-00B913D36F38";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.28517218296868324 1.9216678139339978 17.051185962359039 ;
+	setAttr ".t" -type "double3" 0.34241225890022381 1.8723408360325602 20.330467716218678 ;
 	setAttr ".r" -type "double3" 0.86164727039764444 1.0000000000000233 -1.5532417818050226e-18 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "5A50D6FC-4C61-2243-5E0B-B6A7DDA18E72";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 16.409543991751455;
+	setAttr ".coi" 19.68969618307403;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -741,11 +741,11 @@ createNode script -n "uiConfigurationScriptNode";
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "4084EE4B-4E92-543B-30D9-5B81D9289393";
-	setAttr ".b" -type "string" "playbackOptions -min 0 -max 25 -ast 0 -aet 26 ";
+	setAttr ".b" -type "string" "playbackOptions -min 0 -max 25 -ast -1 -aet 26 ";
 	setAttr ".st" 6;
 select -ne :time1;
-	setAttr ".o" 6;
-	setAttr ".unw" 6;
+	setAttr ".o" 25;
+	setAttr ".unw" 25;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
