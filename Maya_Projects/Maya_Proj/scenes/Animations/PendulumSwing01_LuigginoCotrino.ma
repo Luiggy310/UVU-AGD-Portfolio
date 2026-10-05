@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: PendulumSwing01_LuigginoCotrino.ma
-//Last modified: Mon, Oct 05, 2026 11:51:18 AM
+//Last modified: Mon, Oct 05, 2026 11:58:13 AM
 //Codeset: 1252
 file -rdi 1 -ns "basicsPendulum_rig_v0_1_beta" -rfn "basicsPendulum_rig_v0_1_betaRN"
 		 -op "VERS|2012|UVER|undef|MADE|undef|CHNG|Sat, Oct 01, 2016 12:21:25 AM|ICON|undef|INFO|undef|OBJN|970|INCL|undef(|LUNI|cm|TUNI|pal|AUNI|deg|TDUR|141120000|"
@@ -11,15 +11,13 @@ file -r -ns "basicsPendulum_rig_v0_1_beta" -dr 1 -rfn "basicsPendulum_rig_v0_1_b
 requires maya "2027";
 requires "stereoCamera" "10.0";
 requires "mtoa" "5.6.1.1";
-requires "mtoa" "5.6.1.1";
-requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202604221258-70da84b25e";
 fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26200)";
-fileInfo "UUID" "D9532175-45B5-CA6E-ABF2-67A433B5071C";
+fileInfo "UUID" "7A9360E0-4518-BCD4-E79F-849D9696D549";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "989AB6D7-405E-FCAF-6C17-00B913D36F38";
@@ -87,20 +85,20 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "1999641D-4974-202E-4B25-FBAF63377AA3";
+	rename -uid "97E3D981-4FD6-7D14-D9EE-0988B45011E9";
 	setAttr -s 8 ".lnk";
 	setAttr -s 8 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "56A0B787-4D36-C097-AC3C-5BA77C34E6F4";
+	rename -uid "A4F5EFB3-4FDA-8924-5A0C-E1A4CF82BF95";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "2B20288E-4041-E6FF-0569-89AC19C19575";
+	rename -uid "B2558581-44D9-5DBB-2614-E3B946124934";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "2F4672C5-4E72-DF4D-25CC-43B02D8606AC";
+	rename -uid "A2D40155-4204-46C0-3264-9B8F20329BD9";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "11A645E4-4D88-E7D6-93A6-72A124354F68";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "EAA51BA1-4C19-2011-6451-59A5D6F22054";
+	rename -uid "701CF7B5-4417-AF82-94AB-139E78929684";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "C7BFD367-4E66-B60F-BB34-C1A298D7CD54";
 	setAttr ".g" yes;
@@ -378,17 +376,20 @@ createNode animCurveTL -n "basicPendulum_ac_cn_tail1_translateX";
 	rename -uid "6A08C9FE-4AE8-CD0F-7A3D-24A7F5A14DE4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  0 0 3 0 6 0 10 0 12 0 14 0 18 0 21 0 24 0;
+	setAttr -s 13 ".ktv[0:12]"  0 0 1 0 3 0 6 0 10 0 11 0 12 0 13 0 14 0
+		 18 0 21 0 23 0 24 0;
 createNode animCurveTL -n "basicPendulum_ac_cn_tail1_translateY";
 	rename -uid "C095E9C0-493B-E54A-7799-5FB70EAF9EE1";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  0 0 3 0 6 0 10 0 12 0 14 0 18 0 21 0 24 0;
+	setAttr -s 13 ".ktv[0:12]"  0 0 1 0 3 0 6 0 10 0 11 0 12 0 13 0 14 0
+		 18 0 21 0 23 0 24 0;
 createNode animCurveTL -n "basicPendulum_ac_cn_tail1_translateZ";
 	rename -uid "4F0E2440-49A6-7601-88A4-B1813405E4C9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  0 0 3 0 6 0 10 0 12 0 14 0 18 0 21 0 24 0;
+	setAttr -s 13 ".ktv[0:12]"  0 0 1 0 3 0 6 0 10 0 11 0 12 0 13 0 14 0
+		 18 0 21 0 23 0 24 0;
 createNode animCurveTL -n "basicPendulum_ac_cn_tail2_translateX";
 	rename -uid "3E217879-4171-DEFE-20E9-439A958D12AD";
 	setAttr ".tan" 18;
@@ -528,45 +529,52 @@ createNode animCurveTA -n "basicPendulum_ac_cn_tail1_rotateX";
 	rename -uid "12BB77B2-44A3-F84C-C8F5-E8A1095521ED";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  0 0 3 0 6 0 10 0 12 0 14 0 18 0 21 0 24 0;
+	setAttr -s 13 ".ktv[0:12]"  0 0 1 0 3 0 6 0 10 0 11 0 12 0 13 0 14 0
+		 18 0 21 0 23 0 24 0;
 createNode animCurveTA -n "basicPendulum_ac_cn_tail1_rotateY";
 	rename -uid "12C84DDF-411F-C5C2-5182-678620E8EC20";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  0 0 3 0 6 0 10 0 12 0 14 0 18 0 21 0 24 0;
+	setAttr -s 13 ".ktv[0:12]"  0 0 1 0 3 0 6 0 10 0 11 0 12 0 13 0 14 0
+		 18 0 21 0 23 0 24 0;
 createNode animCurveTA -n "basicPendulum_ac_cn_tail1_rotateZ";
 	rename -uid "2166FA64-4B18-19E1-513D-92B33AEA1A78";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 21 ".ktv[0:20]"  0 0 2 29.999999999999996 3 42 4 50 5 56
-		 6 59.999999999999993 7 56 8 50 9 42 10 29.999999999999996 12 0 14 -29.999999999999996
-		 15 -42 16 -50 17 -56 18 -59.999999999999993 19 -56 20 -50 21 -42 22 -29.999999999999996
-		 24 0;
+	setAttr -s 25 ".ktv[0:24]"  0 0 1 18 2 29.999999999999996 3 42 4 50
+		 5 56 6 59.999999999999993 7 56 8 50 9 42 10 29.999999999999996 11 18 12 0 13 -18
+		 14 -29.999999999999996 15 -42 16 -50 17 -56 18 -59.999999999999993 19 -56 20 -50
+		 21 -42 22 -29.999999999999996 23 -18 24 0;
 createNode animCurveTU -n "basicPendulum_ac_cn_tail1_scaleX";
 	rename -uid "D32382B2-451C-ACE1-BD4B-3EB8283EB774";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  0 1 3 1 6 1 10 1 12 1 14 1 18 1 21 1 24 1;
+	setAttr -s 13 ".ktv[0:12]"  0 1 1 1 3 1 6 1 10 1 11 1 12 1 13 1 14 1
+		 18 1 21 1 23 1 24 1;
 createNode animCurveTU -n "basicPendulum_ac_cn_tail1_scaleY";
 	rename -uid "C4401758-4F9A-FF4E-950E-D6AD607141B3";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  0 1 3 1 6 1 10 1 12 1 14 1 18 1 21 1 24 1;
+	setAttr -s 13 ".ktv[0:12]"  0 1 1 1 3 1 6 1 10 1 11 1 12 1 13 1 14 1
+		 18 1 21 1 23 1 24 1;
 createNode animCurveTU -n "basicPendulum_ac_cn_tail1_scaleZ";
 	rename -uid "E883E79E-44A4-2E2C-272D-78B28AC6F319";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  0 1 3 1 6 1 10 1 12 1 14 1 18 1 21 1 24 1;
+	setAttr -s 13 ".ktv[0:12]"  0 1 1 1 3 1 6 1 10 1 11 1 12 1 13 1 14 1
+		 18 1 21 1 23 1 24 1;
 createNode animCurveTU -n "basicPendulum_ac_cn_tail1_follow_pos";
 	rename -uid "043A8A09-4D81-D2F3-8019-14B13C2BCE34";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  0 1 3 1 6 1 10 1 12 1 14 1 18 1 21 1 24 1;
+	setAttr -s 13 ".ktv[0:12]"  0 1 1 1 3 1 6 1 10 1 11 1 12 1 13 1 14 1
+		 18 1 21 1 23 1 24 1;
 createNode animCurveTU -n "basicPendulum_ac_cn_tail1_follow_rot";
 	rename -uid "24D8FAE6-406C-32AC-241A-089094A87F01";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  0 0 3 0 6 0 10 0 12 0 14 0 18 0 21 0 24 0;
+	setAttr -s 13 ".ktv[0:12]"  0 0 1 0 3 0 6 0 10 0 11 0 12 0 13 0 14 0
+		 18 0 21 0 23 0 24 0;
 createNode animCurveTA -n "basicPendulum_ac_cn_base_rotateX";
 	rename -uid "43B40959-4A7D-DA5C-8205-CEB513D958B2";
 	setAttr ".tan" 18;
@@ -747,8 +755,8 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".b" -type "string" "playbackOptions -min 0 -max 24 -ast -1 -aet 26 ";
 	setAttr ".st" 6;
 select -ne :time1;
-	setAttr ".o" 22;
-	setAttr ".unw" 22;
+	setAttr ".o" 24;
+	setAttr ".unw" 24;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -795,8 +803,6 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "basicPendulum_ac_cn_base_global_scale.o" "basicsPendulum_rig_v0_1_betaRN.phl[1]"
 		;
 connectAttr "basicPendulum_ac_cn_base_vis_eyes.o" "basicsPendulum_rig_v0_1_betaRN.phl[2]"
